@@ -62,20 +62,20 @@ public class AbohawaApp {
             double temperature = (double) temperatureData.get(index);
 
             // get weather code
-            JSONArray weatherCode = (JSONArray) hourly.get("weathercode");
+            JSONArray weatherCode = (JSONArray) hourly.get("weather_code");
             String weatherCondition = convertWeatherCode((long) weatherCode.get(index));
 
             // get humidity
-            JSONArray relativeHumidity = (JSONArray) hourly.get("relativeHumidity_2m");
+            JSONArray relativeHumidity = (JSONArray) hourly.get("relative_humidity_2m");
             long humidity = (long) relativeHumidity.get(index);
 
             // get windspeed
-            JSONArray windspeedData = (JSONArray) hourly.get("windspeed_10m");
+            JSONArray windspeedData = (JSONArray) hourly.get("wind_speed_10m");
             double windspeed = (double) windspeedData.get(index);
 
             // build weather json data object for frontend access
             var weatherData = new JSONObject();
-            weatherData.put("tempurature", temperature);
+            weatherData.put("temperature", temperature);
             weatherData.put("weather_condition", weatherCondition);
             weatherData.put("humidity", humidity);
             weatherData.put("windspeed", windspeed);
