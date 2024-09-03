@@ -122,16 +122,9 @@ public class AbohawaGUI extends JFrame {
                 switch (weatherCondition){
                     case "Clear" -> weatherConditionImage.setIcon(loadImage("src/assets/clear.png"));
                     case "Cloudy" -> weatherConditionImage.setIcon(loadImage("src/assets/cloudy.png"));
-                    case "Drizzle" -> weatherConditionImage.setIcon(loadImage("src/assets/drizzle.png"));
-                    case "Freezing Drizzle" -> weatherConditionImage.setIcon(loadImage("src/assets/Freezing Drizzle.png"));
-                    case "Freezing Rain" -> weatherConditionImage.setIcon(loadImage("src/assets/Freezing Rain.png"));
                     case "Rain" -> weatherConditionImage.setIcon(loadImage("src/assets/rain.png"));
-                    case "Snow Fall" -> weatherConditionImage.setIcon(loadImage("src/assets/Snow Fall.png"));
-                    case "Snow Grains" -> weatherConditionImage.setIcon(loadImage("src/assets/Snow Grain.png"));
-                    case "Rain Showers"-> weatherConditionImage.setIcon(loadImage("src/assets/Rain Showers.png"));
-                    case "Snow Showers Slight and Heavy" -> weatherConditionImage.setIcon(loadImage("src/assets/Snow Shower.png"));
+                    case "Snow Fall" -> weatherConditionImage.setIcon(loadImage("src/assets/snow.png"));
                     case "Thunderstorm" -> weatherConditionImage.setIcon(loadImage("src/assets/Thunderstorm.png"));
-                    case "Thunderstorm with Slight and Heavy Hail" -> weatherConditionImage.setIcon(loadImage("src/assets/Thunderstorm with Hail.png"));
                 }
 
                 // update temperature text
@@ -143,11 +136,11 @@ public class AbohawaGUI extends JFrame {
 
                 // update humidity text
                 long humidity = (long) weatherData.get("humidity");
-                humidityText.setText("</html><b>Humidity</b> " + humidity + "%</html>");
+                humidityText.setText(+ humidity + "%");
 
                 // update windspeed text
                 double windspeed = (double) weatherData.get("windspeed");
-                windspeedText.setText("</html><b>Windspeed</b> " + windspeed + "km/h</html>");
+                windspeedText.setText(windspeed + "km/h");
             }
         });
         add(searchButton);

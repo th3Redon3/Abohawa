@@ -213,16 +213,9 @@ public class AbohawaApp {
         String weatherCondition = switch ((int) weatherCode) {
             case 0 -> "Clear";
             case 1, 2, 3 -> "Cloudy";
-            case 51, 53, 55 -> "Drizzle";
-            case 56, 57 -> "Freezing Drizzle";
-            case 61, 63, 65 -> "Rain";
-            case 66, 67 -> "Freezing Rain";
-            case 71, 73, 75 -> "Snow Fall";
-            case 77 -> "Snow Grains";
-            case 80, 81, 82 -> "Rain Showers";
-            case 85, 86 -> "Snow Showers Slight and Heavy";
-            case 95 -> "Thunderstorm";
-            case 96, 99 -> "Thunderstorm with Slight and Heavy Hail";
+            case 51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 80, 81, 82, 85, 86 -> "Rain";
+            case 71, 73, 75, 77 -> "Snow Fall";
+            case 95, 96, 99 -> "Thunderstorm";
             default -> "Unknown Weather Code";
         };
         return weatherCondition;
